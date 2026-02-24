@@ -5,7 +5,7 @@ int main ()
 {
     int n; cout << "\nEnter num of rows (eg: 11,21,31,..... for symmetry) : "; cin >> n;
     
-    int row = n; //5 --> 1 thickness (odd), 11 --> 3 thicknes (even), 21--> 5 thickness (odd), 31 --> 7 thickness (even)
+    int row = n; // 11 --> 3 thicknes (even), 21--> 5 thickness (odd), 31 --> 7 thickness (even)
     int col = row;
     int centre = row / 2;
     int centrehalf = centre / 2;
@@ -110,4 +110,5 @@ int main ()
             left2++;
         }
     }
+
 }
