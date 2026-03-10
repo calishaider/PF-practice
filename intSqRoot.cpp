@@ -50,3 +50,4 @@ for(int d = 0; d < 2; d++)    // number of decimal places you want
     cout << "Sq root of " << n << " is : " << result;
     return 0;
 }
+
