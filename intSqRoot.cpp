@@ -9,6 +9,7 @@ int main() {
     long long high = n;
     long long ans;
 
+    // only integer sq root
     while (true)
     {
         long long mid = (low + high)/2;
@@ -17,16 +18,35 @@ int main() {
             ans = high;
             break;
         }
-        if(mid*mid <= n)
+        if (mid * mid <= n) 
         {
-            low = mid + 1;
+            low = mid;
+            low++;
         }
         else
         {
-            high = mid - 1;
+            high = mid;
+            high--;
         }
     }
 
-    cout << ans;
+// Step 2: Find decimal part
+double result = ans;   
+double step = 0.1;        
+
+for(int d = 0; d < 2; d++)    // number of decimal places you want
+{
+    // keep adding step until square exceeds n
+    while(result * result <= n)
+    {
+        result += step;
+    }
+    // last increment was too much, step back
+    result -= step;
+    // make step smaller to move to next decimal place
+    step /= 10;
+}
+
+    cout << "Sq root of " << n << " is : " << result;
     return 0;
 }
